@@ -1,0 +1,11 @@
+{
+    "modules": [
+        [
+            "ilastik/workflows"
+        ],
+        [
+            "ilastik/applets"
+        ]
+    ],
+    "address": "E:/Spring 2022/SEAI/ilastik"
+}
