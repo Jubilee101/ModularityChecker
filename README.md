@@ -17,4 +17,5 @@ All the address are separated by `'/'`.
 A sample of `meta_data.json` is provided [here](https://github.com/Jubilee101/ModularityChecker/blob/master/sample/meta_data.json). After the checker finish analyzing, it generates a
 `info.json` under the same directory which you specified in the argument, containing a total modularity `score`, 
 which is the ratio of number of changes across modules (`extra`) to the number
-of changes within one module (`intra`). A sample of `info.json` is provided [here](https://github.com/Jubilee101/ModularityChecker/blob/master/sample/info.json)
+of changes within one module (`intra`). It also tells you the contribution (total line changes) of each author towards each module.
+A sample of `info.json` is provided [here](https://github.com/Jubilee101/ModularityChecker/blob/master/sample/info.json)
