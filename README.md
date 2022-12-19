@@ -14,7 +14,7 @@ is a 2d array, each array inside is a module containing a series of files/folder
 All the address are separated by `'/'`.
 <pr>
 
-A sample of `meta_data.json` is provided [here](). After the checker finish analyzing, it generates a
+A sample of `meta_data.json` is provided [here](https://github.com/Jubilee101/ModularityChecker/blob/master/sample/meta_data.json). After the checker finish analyzing, it generates a
 `info.json` under the same directory which you specified in the argument, containing a total modularity `score`, 
 which is the ratio of number of changes across modules (`extra`) to the number
-of changes within one module (`intra`). A sample of `info.json` is provided [here]()
+of changes within one module (`intra`). A sample of `info.json` is provided [here](https://github.com/Jubilee101/ModularityChecker/blob/master/sample/info.json)
