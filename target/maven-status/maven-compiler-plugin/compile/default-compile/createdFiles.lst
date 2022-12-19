@@ -1,0 +1,8 @@
+com\hzhang\modularitychecker\tool\LogFollowCommand$DiffCollector.class
+com\hzhang\modularitychecker\ModularityChecker.class
+com\hzhang\modularitychecker\tool\DirectoryWalker.class
+com\hzhang\modularitychecker\tool\LogFollowCommand.class
+com\hzhang\modularitychecker\model\MetaData.class
+com\hzhang\modularitychecker\model\Pair.class
+com\hzhang\modularitychecker\tool\HistoryChecker.class
+com\hzhang\modularitychecker\model\Info.class
