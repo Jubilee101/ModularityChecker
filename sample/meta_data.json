@@ -1,11 +1,16 @@
 {
     "modules": [
         [
-            "ilastik/workflows"
+            "datashare-nlp-corenlp"
         ],
         [
-            "ilastik/applets"
+            "datashare-app",
+            "datashare-cli",
+            "datashare-db",
+            "datashare-dist",
+            "datashare-index",
+            "commons-test"
         ]
     ],
-    "address": "E:/Spring 2022/SEAI/ilastik"
+    "address": "E:/Spring 2022/SEAI/datashare"
 }
