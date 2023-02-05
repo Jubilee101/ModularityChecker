@@ -47,20 +47,20 @@ public class DirectoryWalker {
 
     public void walkDirectoryTree(TreeWalk treeWalk, String directory) throws IOException {
         while (treeWalk.next()) {
-            if (treeWalk.getNameString().equals(directory)) {
+            System.out.println(treeWalk.getPathString() + " " + directory);
+            if (treeWalk.getPathString().equals(directory)) {
                 return;
             }
-            boolean isLeaf = true;
             String path = treeWalk.getPathString();
             if (treeWalk.isSubtree()) {
-                isLeaf = false;
+                System.out.println("subtree " + path);
                 // if belongs to one module, add authors of the file to that module
                 // do something about the dependency
                 treeWalk.enterSubtree();
-                walkDirectoryTree(treeWalk, treeWalk.getNameString());
-            }
-            if (isLeaf) {
+                walkDirectoryTree(treeWalk, treeWalk.getPathString());
+            } else {
                 checker.checkHistory(path);
+                System.out.println("leaf " + path);
             }
         }
     }

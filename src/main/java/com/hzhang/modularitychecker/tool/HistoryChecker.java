@@ -31,8 +31,8 @@ public class HistoryChecker {
     private Map<String, List<String>> commitFiles;
     private Map<Pair, Integer> dependencies;
     private List<Map<String, Integer>> moduleAuthorsCounts;
-    private int intra;
-    private int extra;
+    private long intra;
+    private long extra;
     private double score;
     public HistoryChecker(Repository repo, MetaData metaData) {
         repository = repo;

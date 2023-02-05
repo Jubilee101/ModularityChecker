@@ -9,14 +9,14 @@ public class Info {
     @JsonProperty("score")
     private double score;
     @JsonProperty("intra")
-    private int intra;
+    private long intra;
     @JsonProperty("extra")
-    private int extra;
+    private long extra;
     @JsonProperty("module_author")
     private List<Map<String, Integer>> moduleAuthorsCounts;
 
     public Info(){}
-    public Info(double score, int intra, int extra, List<Map<String, Integer>> moduleAuthorsCounts) {
+    public Info(double score, long intra, long extra, List<Map<String, Integer>> moduleAuthorsCounts) {
         this.score = score;
         this.intra = intra;
         this.extra = extra;
