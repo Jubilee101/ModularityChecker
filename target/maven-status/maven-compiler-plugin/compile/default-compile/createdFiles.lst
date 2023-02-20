@@ -6,3 +6,4 @@ com\hzhang\modularitychecker\model\MetaData.class
 com\hzhang\modularitychecker\model\Pair.class
 com\hzhang\modularitychecker\tool\HistoryChecker.class
 com\hzhang\modularitychecker\model\Info.class
+com\hzhang\modularitychecker\tool\LineCounter.class

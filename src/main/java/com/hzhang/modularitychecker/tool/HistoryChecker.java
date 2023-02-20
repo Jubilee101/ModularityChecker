@@ -31,6 +31,7 @@ public class HistoryChecker {
     private Map<String, List<String>> commitFiles;
     private Map<Pair, Integer> dependencies;
     private List<Map<String, Integer>> moduleAuthorsCounts;
+    private List<Long> moduleLines;
     private long intra;
     private long extra;
     private double score;
@@ -41,16 +42,20 @@ public class HistoryChecker {
         commitFiles = new HashMap<>();
         dependencies = new HashMap<>();
         moduleAuthorsCounts = new ArrayList<>();
+        moduleLines = new ArrayList<>();
         for (int i = 0; i < metaData.modules.size(); i++) {
             moduleAuthorsCounts.add(new HashMap<>());
+            moduleLines.add(0L);
         }
     }
-    public void checkHistory(String filePath) {
+    public void checkHistory(String filePath, String repoAddress) {
         int moduleIndex = searchForModule(filePath);
         if (moduleIndex < 0) {
 //            System.out.println("no module found for file: " + filePath);
             return;
         }
+        int lines = LineCounter.countLines(repoAddress + '/' + filePath);
+        moduleLines.set(moduleIndex, moduleLines.get(moduleIndex) + lines);
         fileModule.put(filePath, moduleIndex);
         RevWalk rw = LogFollowCommand.follow(repository, filePath);
         ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -152,7 +157,7 @@ public class HistoryChecker {
             }
         }
         score = (double) extra / intra;
-        Info info = new Info(score, intra, extra, moduleAuthorsCounts);
+        Info info = new Info(score, intra, extra, moduleLines, moduleAuthorsCounts);
         return info;
     }
 

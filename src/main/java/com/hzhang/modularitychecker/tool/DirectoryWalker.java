@@ -17,10 +17,12 @@ public class DirectoryWalker {
     private Repository repository;
     private MetaData metaData;
     private HistoryChecker checker;
+    private String repoAddress;
     public DirectoryWalker(MetaData input) {
         metaData = input;
         FileRepositoryBuilder builder = new FileRepositoryBuilder();
         try {
+            repoAddress = metaData.repoAddress;
             String gitAddr = Paths.get(metaData.repoAddress, ".git").toString();
             repository = builder.setGitDir(new File(gitAddr))
                     .readEnvironment()
@@ -59,7 +61,7 @@ public class DirectoryWalker {
                 treeWalk.enterSubtree();
                 walkDirectoryTree(treeWalk, treeWalk.getPathString());
             } else {
-                checker.checkHistory(path);
+                checker.checkHistory(path, repoAddress);
                 System.out.println("leaf " + path);
             }
         }
